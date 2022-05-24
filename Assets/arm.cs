@@ -15,8 +15,8 @@ public class arm : MonoBehaviour
     void Start()
     {
 
-        X[4] = Target.transform.localPosition.x*100; // абсцисса целевой точки
-        Y[4] = Target.transform.localPosition.y*100; // высота целевой точки от 0 базы (если ниже, то минус)
+        X[4] = Target.transform.localPosition.x*100; // Г ГЎГ±Г¶ГЁГ±Г±Г  Г¶ГҐГ«ГҐГўГ®Г© ГІГ®Г·ГЄГЁ
+        Y[4] = Target.transform.localPosition.y*100; // ГўГ»Г±Г®ГІГ  Г¶ГҐГ«ГҐГўГ®Г© ГІГ®Г·ГЄГЁ Г®ГІ 0 ГЎГ Г§Г» (ГҐГ±Г«ГЁ Г­ГЁГ¦ГҐ, ГІГ® Г¬ГЁГ­ГіГ±)
 
 
         StartCoroutine(sender());
@@ -27,9 +27,9 @@ public class arm : MonoBehaviour
         X[4] = Vector3.Distance(new Vector3(transform.position.x,0, transform.position.z),new Vector3(Target.transform.position.x,0, Target.transform.position.z)) * 100;
         Y[4] = Target.transform.localPosition.y * 100;
 
-        // поправка на угол схвата
-        X[3] = X[4] - L[4] * Mathf.Sin(((float)DegreeToRadian(U[4])));
-        Y[3] = Y[4] + L[4] * Mathf.Cos(((float)DegreeToRadian(U[4])));
+        // ГЇГ®ГЇГ°Г ГўГЄГ  Г­Г  ГіГЈГ®Г« Г±ГµГўГ ГІГ 
+        X[3] = X[4] - L[4] * Mathf.Cos(((float)DegreeToRadian(U[4])));
+        Y[3] = Y[4] + L[4] * Mathf.Sin(((float)DegreeToRadian(U[4])));
 
         float B = Mathf.Pow((Y[3]-Y[1]), 2f) + Mathf.Pow(X[3],2f);
         
